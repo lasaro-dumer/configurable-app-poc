@@ -11,13 +11,21 @@ namespace Possible.Configuration.One
         {
             Output = output;
         }
-        
+
         public void Start(params object[] startParams)
         {
             if (startParams.Length < 1)
+            {
                 throw new ArgumentException("The starter need at least one argument");
+            }
             else
-                Output.Write("Starter starting....");
+            {
+                Output.Write("Received params:");
+                foreach (var param in startParams)
+                {
+                    Output.Write(param.ToString());
+                }
+            }
         }
     }
 }
