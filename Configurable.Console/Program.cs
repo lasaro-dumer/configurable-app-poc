@@ -1,4 +1,8 @@
-﻿using Configuration.Interfaces;
+﻿//#define TEXT_COMFIG
+//#define TEXT_2
+//#define TEXT_2_1
+#define TYPED_CONFIG
+using Configuration.Interfaces;
 using Configuration.Output;
 using Domain.Types.One;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,15 +20,30 @@ namespace Configurable.Console
         static void Main(string[] args)
         {
             //setup our DI
-            var serviceProvider = new ServiceCollection()
-                .AddLogging()
-                .AddSingleton<IStandardOutput, ConsoleOutput>()
-                //.AddSingleton<ITextSplitter, SimpleTextProcessor>()
-                .AddSingleton<ITextSplitter, OnlyVogalsProcessor>()
-                //.AddSingleton<IStarter, OneStarter>()
-                //.AddSingleton<IStarter, StarterTwo>()
-                .AddSingleton<IStarter, StrongStarterOne>()
-                .BuildServiceProvider();
+            var serviceCollection = new ServiceCollection();
+
+            serviceCollection.AddLogging();
+            serviceCollection.AddSingleton<IStandardOutput, ConsoleOutput>();
+#if TEXT_COMFIG
+#if TEXT_1
+            serviceCollection.AddSingleton<IStarter, OneStarter>();
+#endif
+
+#if TEXT_2
+#if TEXT_2_1
+            serviceCollection.AddSingleton<ITextSplitter, SimpleTextProcessor>();
+#endif
+#if TEXT_2_2
+            serviceCollection.AddSingleton<ITextSplitter, OnlyVogalsProcessor>();
+#endif
+            serviceCollection.AddSingleton<IStarter, StarterTwo>();
+#endif
+#endif
+
+#if TYPED_CONFIG
+            serviceCollection.AddSingleton<IStarter, StrongStarterOne>();
+#endif
+            var serviceProvider = serviceCollection.BuildServiceProvider();
 
             //configure console logging
             serviceProvider
@@ -44,8 +63,7 @@ namespace Configurable.Console
 
                 var starter = serviceProvider.GetService<IStarter>();
 
-                if (starter is StrongStarterOne)
-                {
+#if TYPED_CONFIG
                     OneIntegerThingy oneThingy = new OneIntegerThingy();
 
                     oneThingy.OneProperty = 1;
@@ -53,11 +71,10 @@ namespace Configurable.Console
                     oneThingy.YetAnotherProperty = 3;
 
                     starter.Start(oneThingy);
-                }
-                else
-                {
+#endif
+#if TEXT_COMFIG
                     starter.Start("split me");
-                }
+#endif
             }
             catch (Exception ex)
             {
