@@ -1,10 +1,12 @@
 ﻿using Configuration.Interfaces;
 using Configuration.Output;
+using Domain.Types.One;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Possible.Configuration.One;
 using Possible.Configuration.Two;
 using Processors;
+using StronglyTyped.Starters;
 using System;
 
 namespace Configurable.Console
@@ -20,7 +22,8 @@ namespace Configurable.Console
                 //.AddSingleton<ITextSplitter, SimpleTextProcessor>()
                 .AddSingleton<ITextSplitter, OnlyVogalsProcessor>()
                 //.AddSingleton<IStarter, OneStarter>()
-                .AddSingleton<IStarter, StarterTwo>()
+                //.AddSingleton<IStarter, StarterTwo>()
+                .AddSingleton<IStarter, StrongStarterOne>()
                 .BuildServiceProvider();
 
             //configure console logging
@@ -41,7 +44,20 @@ namespace Configurable.Console
 
                 var starter = serviceProvider.GetService<IStarter>();
 
-                starter.Start("split me");
+                if (starter is StrongStarterOne)
+                {
+                    OneIntegerThingy oneThingy = new OneIntegerThingy();
+
+                    oneThingy.OneProperty = 1;
+                    oneThingy.AnotherProperty = 2;
+                    oneThingy.YetAnotherProperty = 3;
+
+                    starter.Start(oneThingy);
+                }
+                else
+                {
+                    starter.Start("split me");
+                }
             }
             catch (Exception ex)
             {

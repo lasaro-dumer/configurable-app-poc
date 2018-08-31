@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Possible.Configuration.One\Possible.Configuration.One.csproj" />
     <ProjectReference Include="..\Possible.Configuration.Two\Possible.Configuration.Two.csproj" />
     <ProjectReference Include="..\Processors\Processors.csproj" />
+    <ProjectReference Include="..\StronglyTyped.Starters\StronglyTyped.Starters.csproj" />
   </ItemGroup>
 
 </Project>

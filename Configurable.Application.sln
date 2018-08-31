@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configurable.Console", "Configurable.Console\Configurable.Console.csproj", "{B61CEED5-7AF1-4635-A049-C703115828E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurable.Console", "Configurable.Console\Configurable.Console.csproj", "{B61CEED5-7AF1-4635-A049-C703115828E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Interfaces", "Configuration.Interfaces\Configuration.Interfaces.csproj", "{959CD88D-DADD-48A1-AAC7-56DCAB57218A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration.Interfaces", "Configuration.Interfaces\Configuration.Interfaces.csproj", "{959CD88D-DADD-48A1-AAC7-56DCAB57218A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Possible.Configuration.One", "Possible.Configuration.One\Possible.Configuration.One.csproj", "{C7A5B99B-7617-4569-9133-791013F035D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Possible.Configuration.One", "Possible.Configuration.One\Possible.Configuration.One.csproj", "{C7A5B99B-7617-4569-9133-791013F035D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Output", "Configuration.Output\Configuration.Output.csproj", "{A3595F4B-504D-4E06-BE74-3D82D23AADF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration.Output", "Configuration.Output\Configuration.Output.csproj", "{A3595F4B-504D-4E06-BE74-3D82D23AADF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Possible.Configuration.Two", "Possible.Configuration.Two\Possible.Configuration.Two.csproj", "{379DFD32-F65D-4203-87D1-63DF20307687}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Possible.Configuration.Two", "Possible.Configuration.Two\Possible.Configuration.Two.csproj", "{379DFD32-F65D-4203-87D1-63DF20307687}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Processors", "Processors\Processors.csproj", "{767B032C-98A0-476B-8029-BBCEE4F926DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Processors", "Processors\Processors.csproj", "{767B032C-98A0-476B-8029-BBCEE4F926DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StronglyTyped.Starters", "StronglyTyped.Starters\StronglyTyped.Starters.csproj", "{9D4AEF42-BCF0-45DA-A3FD-87BD7CA29928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Types.One", "Domain.Types.One\Domain.Types.One.csproj", "{1D1D0760-BF1D-4671-92AC-3B43BDBE0757}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{767B032C-98A0-476B-8029-BBCEE4F926DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{767B032C-98A0-476B-8029-BBCEE4F926DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{767B032C-98A0-476B-8029-BBCEE4F926DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D4AEF42-BCF0-45DA-A3FD-87BD7CA29928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D4AEF42-BCF0-45DA-A3FD-87BD7CA29928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D4AEF42-BCF0-45DA-A3FD-87BD7CA29928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D4AEF42-BCF0-45DA-A3FD-87BD7CA29928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D1D0760-BF1D-4671-92AC-3B43BDBE0757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1D0760-BF1D-4671-92AC-3B43BDBE0757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D1D0760-BF1D-4671-92AC-3B43BDBE0757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D1D0760-BF1D-4671-92AC-3B43BDBE0757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
